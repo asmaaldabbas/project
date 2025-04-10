@@ -1,0 +1,45 @@
+package myPackage;
+import java.util.*;
+		public class BiologyTest {
+		    public static void main(String[] args) {
+		        Scanner scanner = new Scanner(System.in);
+
+		        int d = scanner.nextInt();
+		        int sumTime = scanner.nextInt();
+
+		        int[] minTime = new int[d];
+		        int[] maxTime = new int[d];
+		        int minTotal = 0, maxTotal = 0;
+
+		        for (int i = 0; i < d; i++) {
+		            minTime[i] = scanner.nextInt();
+		            maxTime[i] = scanner.nextInt();
+		            minTotal += minTime[i];
+		            maxTotal += maxTime[i];
+		        }
+		        scanner.close();
+
+		        if (sumTime < minTotal || sumTime > maxTotal) {
+		            System.out.println("NO");
+		            return;
+		        }
+
+		        int[] schedule = Arrays.copyOf(minTime, d);
+		        int remaining = sumTime - minTotal;
+
+		        for (int i = 0; i < d && remaining > 0; i++) {
+		            int extra = Math.min(remaining, maxTime[i] - minTime[i]);
+		            schedule[i] += extra;
+		            remaining -= extra;
+		        }
+
+		        System.out.println("YES");
+		        for (int hours : schedule) {
+		            System.out.print(hours + " ");
+		        }
+		    }
+		
+
+	}
+
+
