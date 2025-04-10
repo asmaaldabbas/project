@@ -24,4 +24,4 @@ Input
 The first line of the input contains an integer x (1 ≤ x ≤ 1 000 000) — The coordinate of the friend's house.
 
 Output
-Print the minimum number of steps that elephant needs to make to get from point 0 to point x. in java code */
+Print the minimum number of steps that elephant needs to make to get from point 0 to point x.*/
