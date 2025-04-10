@@ -1,0 +1,22 @@
+package myPackage;
+
+import java.util.Scanner;
+
+public class Bit {
+    public static void main(String[] args) {
+    	
+Scanner scan = new Scanner(System.in);   
+System.out.println("enter number");
+int statment_number = scan.nextInt();  //2
+ int count = 0;   
+ for (int i = 0; i < statment_number; i++) {//0<2
+  String statement = scan.next();   //++x
+   if (statement.contains("++")) {
+    count++;
+ }  else {
+  count--;
+ }}
+
+  System.out.println(count);  
+    }
+}
